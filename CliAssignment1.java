@@ -135,7 +135,12 @@ public class CliAssignment1 {
                     newDepo[newDepo.length-1] = deposit;
                     DEPO= newDepo;
 
-
+                    System.out.print("\tDo you want to continue adding (Y/n)? ");
+                    if (SCANNER.nextLine().strip().toUpperCase().equals("Y"))
+                        continue;
+                    ;
+                    screen = DASHBOARD;
+                    break;
 
             }
 
