@@ -84,6 +84,35 @@ public class CliAssignment1 {
                     newId[newId.length - 1] = id;
                     ID = newId;
 
+                    //Name Validation
+                    do {
+                        valid = true;
+                        System.out.print("\tEnter A/C Name: ");
+                        name = SCANNER.nextLine().strip();
+                        if (name.isBlank()) {
+                            System.out.printf(ERROR_MSG, "A/C name can't be empty");
+                            valid = false;
+                            continue;
+                        }
+                        for (int i = 0; i < name.length(); i++) {
+                            if (!(Character.isLetter(name.charAt(i)) ||
+                                    Character.isSpaceChar(name.charAt(i)))) {
+                                System.out.printf(ERROR_MSG, "Invalid A/C name");
+                                valid = false;
+                                break;
+                            }
+                        }
+                    } while (!valid);
+
+                    String[] newAcNames = new String[account.length + 1];
+                    for (int i = 0; i < account.length; i++) {
+                        newAcNames[i] = account[i];
+
+                    }
+                    newAcNames[newAcNames.length - 1] = name;
+                    account = newAcNames;
+                    
+
 
             }
 
