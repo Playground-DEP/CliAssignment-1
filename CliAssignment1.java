@@ -111,7 +111,30 @@ public class CliAssignment1 {
                     }
                     newAcNames[newAcNames.length - 1] = name;
                     account = newAcNames;
-                    
+
+                    //Initial deposit
+                    do{
+                        System.out.println();
+                        System.out.print("Enter the amount to be deposited here:");
+                        deposit = SCANNER.nextInt();
+                        SCANNER.nextLine();
+
+                        if(deposit > 5000){
+                            System.out.println("Initial Deposit :" + deposit);
+                            System.out.println();
+                            System.out.printf(SUCCESS_MSG, String.format("%s%s has been saved successfully", account.length, name));
+
+                        } else {
+                            System.out.printf(ERROR_MSG, "No sufficient amount in your account!");
+                        }
+                    }while(!valid);
+                    int[] newDepo = new int[DEPO.length + 1];
+                    for (int i = 0; i < DEPO.length; i++) {
+                        newDepo[i] = DEPO[i];
+                    }
+                    newDepo[newDepo.length-1] = deposit;
+                    DEPO= newDepo;
+
 
 
             }
